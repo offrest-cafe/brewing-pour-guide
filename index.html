@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>푸어링 맛 조절 가이드 — OFFREST ROASTERY</title>
+<meta name="description" content="오프레스트 로스터리 초보 바리스타를 위한 푸어링 구간별 맛 조절 실전 매뉴얼">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+:root {
+  --ink: #1A1A1A;
+  --dim: #777777;
+  --faint: #BBBBBB;
+  --bg: #FAFAFA;
+  --acc: #C8946D;
+  --acc-light: #FAF6F2;
+  --red: #D9534F;
+  --red-light: #FDF2F2;
+  --border: #E8E8E8;
+  --white: #FFFFFF;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 24px;
+  background: linear-gradient(180deg, var(--white) 0%, var(--acc-light) 100%);
+}
+.hero-brand {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  color: var(--acc);
+  margin-bottom: 24px;
+}
+.hero h1 {
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+.hero-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--acc);
+  margin: 24px auto;
+}
+.hero-recipe {
+  font-size: 15px;
+  color: var(--dim);
+  margin-bottom: 8px;
+}
+.hero-recipe strong {
+  color: var(--ink);
+  font-size: 17px;
+}
+.hero-sub {
+  font-size: 13px;
+  color: var(--faint);
+  margin-top: 40px;
+}
+
+/* ── LAYOUT ── */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 80px 0;
+  border-top: 1px solid var(--border);
+}
+
+.section-num {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--acc);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: clamp(22px, 3.5vw, 30px);
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.section-body {
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+/* ── TABLE ── */
+.table-wrap {
+  overflow-x: auto;
+  margin: 24px 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+thead th {
+  background: var(--bg);
+  font-weight: 500;
+  padding: 12px 14px;
+  text-align: left;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  white-space: nowrap;
+}
+
+tbody td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tbody tr:last-child td {
+  border-bottom: 2px solid var(--ink);
+}
+
+.c-red { color: #C0392B; font-weight: 500; }
+.c-acc { color: var(--acc); font-weight: 500; }
+.c-purple { color: #6C3483; font-weight: 500; }
+.c-green { color: #1E8449; font-weight: 500; }
+.c-blue { color: #2E86C1; font-weight: 500; }
+.c-dim { color: var(--dim); }
+.fw-500 { font-weight: 500; }
+.text-center { text-align: center; }
+
+/* ── ACCENT BOX ── */
+.accent-box {
+  border-left: 4px solid var(--acc);
+  background: var(--acc-light);
+  padding: 16px 20px;
+  margin: 24px 0;
+  border-radius: 0 6px 6px 0;
+}
+.accent-box p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 4px;
+}
+.accent-box p:last-child { margin-bottom: 0; }
+
+/* ── WARN BOX ── */
+.warn-box {
+  border-left: 4px solid var(--red);
+  background: var(--red-light);
+  padding: 14px 20px;
+  margin: 12px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ── CASE BLOCK ── */
+.case {
+  margin-bottom: 48px;
+}
+.case:last-child { margin-bottom: 0; }
+
+.case-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--acc);
+  margin-bottom: 6px;
+}
+.case-where {
+  font-size: 13px;
+  color: var(--dim);
+  margin-bottom: 12px;
+}
+.case-where strong {
+  color: var(--ink);
+  font-size: 15px;
+}
+.case-divider {
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 16px;
+}
+.case-step {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.case-detail {
+  font-size: 13px;
+  color: var(--dim);
+  margin-left: 16px;
+  margin-bottom: 12px;
+}
+.case-why {
+  font-size: 13px;
+  color: var(--dim);
+  font-style: italic;
+  margin-top: 12px;
+}
+
+/* ── RECIPE CARD ── */
+.recipe-card {
+  margin-bottom: 36px;
+}
+.recipe-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--acc);
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+.recipe-card table {
+  font-size: 13px;
+}
+.recipe-card thead th {
+  font-size: 12px;
+  text-align: center;
+}
+.recipe-card tbody td {
+  text-align: center;
+}
+.highlight-row td {
+  font-weight: 500;
+}
+
+/* ── FOOTER ── */
+.closing {
+  text-align: center;
+  padding: 100px 24px;
+  background: linear-gradient(180deg, var(--white) 0%, var(--acc-light) 100%);
+}
+.closing-main {
+  font-size: clamp(18px, 3vw, 24px);
+  font-weight: 700;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.closing-sub {
+  font-size: 15px;
+  color: var(--dim);
+  line-height: 1.8;
+  margin-bottom: 48px;
+}
+.closing-sign {
+  font-size: 13px;
+  color: var(--faint);
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* ── NAV ── */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+.top-nav.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.nav-brand {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: var(--acc);
+}
+.nav-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  section { padding: 60px 0; }
+  .case { margin-bottom: 36px; }
+  thead th, tbody td { padding: 8px 10px; font-size: 13px; }
+  .recipe-card thead th, .recipe-card tbody td { font-size: 12px; padding: 6px 8px; }
+}
+
+/* ── SCROLL ANIMATION ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top-nav" id="topNav">
+  <span class="nav-brand">OFFREST ROASTERY</span>
+  <span class="nav-title">푸어링 맛 조절 가이드</span>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-brand">OFFREST ROASTERY</div>
+  <h1>푸어링 구간별<br>맛 조절 가이드</h1>
+  <div class="hero-divider"></div>
+  <p class="hero-recipe">원두 16g &nbsp;/&nbsp; 총 물 240g &nbsp;/&nbsp; 3회 푸어링</p>
+  <p class="hero-recipe"><strong>1차 뜸 50g &nbsp;→&nbsp; 2차 120g &nbsp;→&nbsp; 3차 240g</strong></p>
+  <p class="hero-sub">초보 바리스타용 실전 매뉴얼 &middot; 2026. 04</p>
+</div>
+
+<main>
+
+<!-- ═══ 01. 핵심 원리 ═══ -->
+<section>
+  <div class="container fade-in">
+    <div class="section-num">01</div>
+    <h2 class="section-title">커피 맛은 순서대로 나온니다</h2>
+    <p class="section-body">커피에 문을 부으메 성분이 한꺼번에 나오지 않습니다.<br>작은 분자가 먼저, 큰 분자가 나중에 녹아 나옵니다.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>순섞</th><th>성분</th><th>맛</th><th>쉬운 비유</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="c-red text-center">초반</td>
+            <td>유기산 (작은 분자)</td>
+            <td class="c-red">산미 — 신맛</td>
+            <td class="c-dim">레몬즙의 첫 신맛</td>
+          </tr>
+          <tr>
+            <td class="c-acc text-center">중반</td>
+            <td>당류 / 칰러멜</td>
+            <td class="c-acc">단맛 — 스위 스팟</td>
+            <td class="c-dim">쿤키 굴는 고소한 향</td>
+          </tr>
+          <tr>
+            <td class="c-purple text-center">후반</td>
+            <td>타닌 / 카페인 (큰 분자)</td>
+            <td class="c-purple">쓴맛 — 떫은맛</td>
+            <td class="c-dim">티백 너무 오래 우린 맛</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="accent-box">
+      <p><strong>기억법:</strong> 산(신맛) → 단(단맛) → 쓴(쓴맛)</p>
+      <p>추출이 길어질수록 쓴맛이 늘어납니다. 차 티백과 같은 원리입니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 02. 기준 레시피 분해 ═══ -->
+<section>
+  <div class="container fade-in">
+    <div class="section-num">02</div>
+    <h2 class="section-title">기준 레시피 분해</h2>
+    <p class="section-body">오프레스트 기본 레시피를 구간별로 분해하면 이렇습니다.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>구간</th><th class="text-center">물의 양</th><th class="text-center">누적</th><th class="text-center">추출되는 맛</th><th>역할</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="fw-500">1차 (뜸)</td>
+            <td class="text-center">50g</td>
+            <td class="text-center">0 → 50g</td>
+            <td class="text-center c-dim">—</td>
+            <td class="c-dim">CO₂ 방출 + 물 침투 준비</td>
+          </tr>
+          <tr>
+            <td class="fw-500">2차</td>
+            <td class="text-center">70g</td>
+            <td class="text-center">50 → 120g</td>
+            <td class="text-center"><span class="c-red">산미</span> + <span class="c-acc">단맛</span></td>
+            <td class="fw-500">맛의 방향을 결정</td>
+          </tr>
+          <tr>
+            <td class="fw-500">3차</td>
+            <td class="text-center">120g</td>
+            <td class="text-center">120 → 240g</td>
+            <td class="text-center"><span class="c-acc">단맛</span> + <span class="c-purple">바디</span></td>
+            <td class="fw-500">농도와 무게감을 채움</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="accent-box">
+      <p><strong>2차 푸어</strong> = 맛의 방향 (신맛/단맛 밸런스)</p>
+      <p><strong>3차 푸어</strong> = 농도 (진하게 or 가볍게)</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 03. 상황별 조절법 ═══ -->
+<section>
+  <div class="container fade-in">
+    <div class="section-num">03</div>
+    <h2 class="section-title">상황별 조절법</h2>
+
+    <!-- Case 1 -->
+    <div class="case">
+      <div class="case-title">"단맛을 더 느끼고 싶어요"</div>
+      <div class="case-where">건드리는 곳 &nbsp;<strong>2차 푸어</strong></div>
+      <div class="case-divider"></div>
+      <p class="case-step">2차를 2번으로 나눠서 천천히 붓기</p>
+      <p class="case-detail">기존: 50g → 120g (한번에 70g)</p>
+      <p class="case-detail">변경: 50g → 80g (30g) → 130g (50g) — 각각 천천히</p>
+      <p class="case-why">원리: 단맛 성분(당류)은 추출 중반에 나옵니다. 천천히 부으면 단맛이 충분히 녹아나올 시간이 생깁니다.</p>
+      <div class="warn-box">3차를 130g → 240g(110g)으로 줄여서 총량 240g 유지할 것</div>
+    </div>
+
+    <!-- Case 2 -->
+    <div class="case">
+      <div class="case-title">"신맛이 너무 강해요"</div>
+      <div class="case-where">건드리는 곳 &nbsp;<strong>1차 뜸 + 물 온도</strong></div>
+      <div class="case-divider"></div>
+      <p class="case-step">A) 뜸 물량 늘리기: 50g → 55~60g</p>
+      <p class="case-detail">CO₂가 더 빠지고 초반 산미 성분이 뜸 문에 녹아 빠져나감</p>
+      <p class="case-step">B) 물 온도 2도 낭추기: 93도 → 91도</p>
+      <p class="case-detail">온도가 낮으면 산미 성분이 덜 추출됨</p>
+      <p class="case-why">원리: 유기산은 분자가 작아 가장 먼저 녹아나옵니다. 뜸에서 미리 빼주메 이후 푸어에서 산미가 줄어듭니다.</p>
+      <div class="warn-box">뜸 물 70g 이상은 금지 — 맛이 물어집니다</div>
+    </div>
+
+    <!-- Case 3 -->
+    <div class="case">
+      <div class="case-title">"쓴맛이 강해요 / 떫어요"</div>
+      <div class="case-where">건드리는 곳 &nbsp;<strong>3차 푸어</strong></div>
+      <div class="case-divider"></div>
+      <p class="case-step">A) 3차를 빠르게 한번에 확 붓기</p>
+      <p class="case-detail">물이 빨리 빠지메 쓴맛 성분이 덜 추출됨</p>
+      <p class="case-step">B) 총량 240g 대신 230g에서 컷</p>
+      <p class="case-detail">마지막 10g의 쓴맛/떫은맛을 아예 제거</p>
+      <p class="case-step">C) 분쇄도를 한 칸 굵게</p>
+      <p class="case-detail">물이 빨리 빠져 전체 추출 시간이 줄어듦</p>
+      <p class="case-why">원리: 쓴맛 성분(타닌, 카페인)은 분자가 커서 항상 마지막에 나옵니다.</p>
+      <div class="warn-box">문이 거의 다 빠졌을 때 드리퍼 제거. 너무 일찍 빼메 묽어짐</div>
+    </div>
+
+    <!-- Case 4 -->
+    <div class="case">
+      <div class="case-title">"묵직하고 진하게 마시고 싶어요"</div>
+      <div class="case-where">건드리는 곳 &nbsp;<strong>3차 푸어 + 분쇄도</strong></div>
+      <div class="case-divider"></div>
+      <p class="case-step">3차를 천천히 느리게 붓기</p>
+      <p class="case-detail">젝촉 시간이 늘어나 더 많은 성분이 녹아나옴</p>
+      <p class="case-step">분쇄도 한 칸 가늘게</p>
+      <p class="case-detail">물이 천천히 빠져 젝촉 시간 추가 증가</p>
+      <div class="warn-box">추출 시간 4분 넘기면 쓴맛이 급즥합니다</div>
+    </div>
+
+    <!-- Case 5 -->
+    <div class="case">
+      <div class="case-title">"깨끗하고 가볍게 마시고 싶어요"</div>
+      <div class="case-where">건드리는 곳 &nbsp;<strong>3차 푸어 + 분쇄도</strong></div>
+      <div class="case-divider"></div>
+      <p class="case-step">3차를 한번에 확 붓고 빠르게</p>
+      <p class="case-detail">무거운 성분이 덜 추출됨</p>
+      <p class="case-step">분쇄도 한 칸 굵게</p>
+      <p class="case-detail">물이 빠르게 빠져 전체 추출 시간 단축</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 04. 요약표 ═══ -->
+<section>
+  <div class="container fade-in">
+    <div class="section-num">04</div>
+    <h2 class="section-title">한눈에 보는 요약표</h2>
+    <p class="section-body" style="font-size:13px; color:var(--dim); font-style:italic;">프린트해서 바 근처에 붙여두세요</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>손니 요청</th><th>건드리는 곳</th><th>방법</th><th>주의</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="c-acc fw-500">단맛 늘려주세요</td>
+            <td>2차 푸어</td>
+            <td>2차를 2번 나눠 천천히</td>
+            <td class="c-dim">총량 240g 유지</td>
+          </tr>
+          <tr>
+            <td class="c-red fw-500">신맛 줄여주세요</td>
+            <td>1차 뜸 + 온도</td>
+            <td>뜸 55~60g / 온도 2도 낮춤</td>
+            <td class="c-dim">뜸 70g 이상 금지</td>
+          </tr>
+          <tr>
+            <td class="c-purple fw-500">쓴맛 줄여주세요</td>
+            <td>3차 푸어</td>
+            <td>3차 빠르게 / 230g 컷</td>
+            <td class="c-dim">4분 넘기메 위험</td>
+          </tr>
+          <tr>
+            <td class="c-green fw-500">묵직하게요</td>
+            <td>3차 + 분쇄도</td>
+            <td>3차 천천히 / 분쇄 가늘게</td>
+            <td class="c-dim">4분 넘지 말 것</td>
+          </tr>
+          <tr>
+            <td class="c-blue fw-500">가볽하게요</td>
+            <td>3차 + 분쇄도</td>
+            <td>3차 빠르게 / 분쇄 굵게</td>
+            <td class="c-dim">총량 250g까지 OK</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 05. 절대 금지 ═══ -->
+<section>
+  <div class="container fade-in">
+    <div class="section-num">05</div>
+    <h2 class="section-title">절대 하지 말 것</h2>
+    <div style="margin-top: 24px;">
+      <div class="warn-box">한번에 두 가지 이상 바꾸지 마세요. 뭐가 원인인지 모릉니다.</div>
+      <div class="warn-box">총 물의 양(240g)을 함부로 바꾸지 마세요. 구간 배분만 바꽼세요.</div>
+      <div class="warn-box">추출 시간 4분을 넘기지 마세요. 쓴맛이 급격히 늘어납니다.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 06. 실전 레시피 ═══ -->
+<section>
+  <div class="container fade-in">
+    <div class="section-num">06</div>
+    <h2 class="section-title">실전 레시피 변형</h2>
+
+    <div class="recipe-card">
+      <div class="recipe-label">기본 (균형)</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>구간</th><th>물의 양</th><th>누적</th><th>속도</th><th>대기</th></tr></thead>
+          <tbody>
+            <tr><td class="fw-500">1차 (뜸)</td><td>50g</td><td>50g</td><td>천천히</td><td>30초</td></tr>
+            <tr><td class="fw-500">2차</td><td>70g</td><td>120g</td><td>보통</td><td>—</td></tr>
+            <tr><td class="fw-500">3차</td><td>120g</td><td>240g</td><td>보통</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="recipe-card">
+      <div class="recipe-label">단맛 강화</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>구간</th><th>물의 양</th><th>누적</th><th>속도</th><th>대기</th></tr></thead>
+          <tbody>
+            <tr><td class="fw-500">1차 (뜸)</td><td>50g</td><td>50g</td><td>천천히</td><td>30초</td></tr>
+            <tr class="highlight-row"><td class="c-acc">2차-A</td><td class="c-acc">30g</td><td>80g</td><td class="c-acc">천천히</td><td>10초</td></tr>
+            <tr class="highlight-row"><td class="c-acc">2차-B</td><td class="c-acc">50g</td><td>130g</td><td class="c-acc">천천히</td><td>—</td></tr>
+            <tr><td class="fw-500">3차</td><td>110g</td><td>240g</td><td>보통</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="recipe-card">
+      <div class="recipe-label">깨끗하고 가벼움</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>구간</th><th>물의 양</th><th>누적</th><th>속도</th><th>대기</th></tr></thead>
+          <tbody>
+            <tr><td class="fw-500">1차 (뜸)</td><td>50g</td><td>50g</td><td>천천히</td><td>30초</td></tr>
+            <tr><td class="fw-500">2차</td><td>70g</td><td>120g</td><td>보통</td><td>—</td></tr>
+            <tr class="highlight-row"><td class="c-blue">3차</td><td class="c-blue">120g</td><td>240g</td><td class="c-blue">빠르게 확!</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--dim); font-style:italic;">분쇄도 한 칸 굵게 + 3차 빠르게 → 문이 빠르게 빠져 깨끗한 맛</p>
+  </div>
+</section>
+
+</main>
+
+<!-- CLOSING -->
+<div class="closing">
+  <p class="closing-main">
+    앞쪽 푸어(뜸/2차) = 맛의 방향<br>
+    뒤쪽 푸어(3차) = 농도와 무게
+  </p>
+  <p class="closing-sub">
+    천천히 부으면 더 많이 녹아나온다<br>
+    빨리 부으메 덜 녹아나온다
+  </p>
+  <p class="closing-sign">Find your rest. Feel your rest.</p>
+</div>
+
+<script>
+// Sticky nav on scroll
+const nav = document.getElementById('topNav');
+const hero = document.querySelector('.hero');
+const observer = new IntersectionObserver(([e]) => {
+  nav.classList.toggle('visible', !e.isIntersecting);
+}, { threshold: 0.1 });
+observer.observe(hero);
+
+// Fade-in on scroll
+const faders = document.querySelectorAll('.fade-in');
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15 });
+faders.forEach(el => fadeObserver.observe(el));
+</script>
+</body>
+</html>
