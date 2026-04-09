@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>아이스 브루잉 레시피 가이드 — OFFREST ROASTERY</title>
+<meta name="description" content="오프레스트 로스터리 아이스 핸드드립 레시피 — 22g 원두, 200g 문, 92°C, 4회 푸어링">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+:root {
+  --ink: #1A1A1A;
+  --dim: #777777;
+  --faint: #BBBBBB;
+  --bg: #FAFAFA;
+  --acc: #2E86C1;
+  --acc-light: #EBF5FB;
+  --copper: #C8946D;
+  --copper-light: #FAF6F2;
+  --red: #D9534F;
+  --red-light: #FDF2F2;
+  --border: #E8E8E8;
+  --white: #FFFFFF;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 24px;
+  background: linear-gradient(180deg, var(--white) 0%, var(--acc-light) 100%);
+}
+.hero-brand {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  color: var(--acc);
+  margin-bottom: 24px;
+}
+.hero h1 {
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+.hero-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--acc);
+  margin: 24px auto;
+}
+.hero-recipe {
+  font-size: 15px;
+  color: var(--dim);
+  margin-bottom: 8px;
+}
+.hero-recipe strong {
+  color: var(--ink);
+  font-size: 17px;
+}
+.hero-sub {
+  font-size: 13px;
+  color: var(--faint);
+  margin-top: 40px;
+}
+.hero-badge {
+  display: inline-block;
+  background: var(--acc);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+/* ── LAYOUT ── */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 80px 0;
+  border-top: 1px solid var(--border);
+}
+
+.section-num {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--acc);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: clamp(22px, 3.5vw, 30px);
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.section-body {
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+/* ── TABLE ── */
+.table-wrap {
+  overflow-x: auto;
+  margin: 24px 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+thead th {
+  background: var(--bg);
+  font-weight: 500;
+  padding: 12px 14px;
+  text-align: left;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  white-space: nowrap;
+}
+
+tbody td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tbody tr:last-child td {
+  border-bottom: 2px solid var(--ink);
+}
+
+.c-red { color: #C0392B; font-weight: 500; }
+.c-acc { color: var(--acc); font-weight: 500; }
+.c-copper { color: var(--copper); font-weight: 500; }
+.c-dim { color: var(--dim); }
+.fw-500 { font-weight: 500; }
+.text-center { text-align: center; }
+
+/* ── ACCENT BOX (ice blue) ── */
+.accent-box {
+  border-left: 4px solid var(--acc);
+  background: var(--acc-light);
+  padding: 16px 20px;
+  margin: 24px 0;
+  border-radius: 0 6px 6px 0;
+}
+.accent-box p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 4px;
+}
+.accent-box p:last-child { margin-bottom: 0; }
+
+/* ── ACCENT BOX (copper) ── */
+.accent-box-copper {
+  border-left: 4px solid var(--copper);
+  background: var(--copper-light);
+  padding: 16px 20px;
+  margin: 24px 0;
+  border-radius: 0 6px 6px 0;
+}
+.accent-box-copper p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 4px;
+}
+.accent-box-copper p:last-child { margin-bottom: 0; }
+
+/* ── WARN BOX ── */
+.warn-box {
+  border-left: 4px solid var(--red);
+  background: var(--red-light);
+  padding: 14px 20px;
+  margin: 12px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ── STEP CARD ── */
+.step-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+}
+.step-num {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--acc);
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+.step-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.step-detail {
+  font-size: 13px;
+  color: var(--dim);
+}
+
+/* ── RECIPE CARD ── */
+.recipe-card {
+  margin-bottom: 36px;
+}
+.recipe-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--acc);
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+.recipe-card table { font-size: 13px; }
+.recipe-card thead th { font-size: 12px; text-align: center; }
+.recipe-card tbody td { text-align: center; }
+.highlight-row td { font-weight: 500; }
+
+/* ── FOOTER ── */
+.closing {
+  text-align: center;
+  padding: 100px 24px;
+  background: linear-gradient(180deg, var(--white) 0%, var(--acc-light) 100%);
+}
+.closing-main {
+  font-size: clamp(18px, 3vw, 24px);
+  font-weight: 700;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.closing-sub {
+  font-size: 15px;
+  color: var(--dim);
+  line-height: 1.8;
+  margin-bottom: 48px;
+}
+.closing-sign {
+  font-size: 13px;
+  color: var(--faint);
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* ── NAV ── */
+.top-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+.top-nav.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.nav-brand {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: var(--acc);
+}
+.nav-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.nav-link {
+  font-size: 12px;
+  color: var(--copper);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-link:hover { text-decoration: underline; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  section { padding: 60px 0; }
+  thead th, tbody td { padding: 8px 10px; font-size: 13px; }
+  .step-card { padding: 16px 18px; }
+}
+
+/* ── SCROLL ANIMATION ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top-nav" id="topNav">
+  <span class="nav-brand">OFFREST ROASTERY</span>
+  <span class="nav-title">아이스 브루잉 레시피</span>
+  <a class="nav-link" href="index.html">HOT 레시피 →</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">ICE BREWING</div>
+  <div class="hero-brand">OFFREST ROASTERY</div>
+  <h1>아이스 브루잉<br>레시피 가이드</h1>
+  <div class="hero-divider"></div>
+  <p class="hero-recipe">원두 22g &nbsp;/&nbsp; 총 물 200g &nbsp;/&nbsp; 4회 푸어링</p>
+  <p class="hero-recipe"><strong>50g × 4회 &nbsp;/ &nbsp;30초 간격 &nbsp;/ &nbsp;문 92°C</strong></p>
+  <p class="hero-sub">초보 바리스타용 실전 매뉴얼 &middot; 2026. 04</p>
+</div>
+
+<main>
+
+<!-- ═══ 01. HOT vs ICE 비교 ═══ -->
+<section>
+  <div class="container fade-in">
+    <div class="section-num">01</div>
+    <h2 class="section-title">핫 vs 아이스 — 무엇이 다른가</h2>
+    <p class="section-body">같은 원두라도 온도와 추출 방식에 따라 맛이 완전히 달라집니다.<br>아이스는 진하게 추출한 뒤 급냉한여 깔끔한 맛을 만듭니다.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>항목</th><th>핫 브루잉</th><th>아이스 브루잉</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="fw-500">원두</td><td>16g</td><td class="c-acc fw-500">22g</td></tr>
+          <tr><td class="fw-500">총 문</td><td>240g (3회)</td><td class="c-acc fw-500">200g (4회)</td></tr>
+          <tr><td class="fw-500">문 온도</td><td>93°C</td><td class="c-acc fw-500">92°C</td></tr>
+          <tr><td class="fw-500">푸어링</td><td>50g → 70g → 120g</td><td class="c-acc fw-500">50g × 4회 (30초 간격)</td></tr>
+          <tr><td class="fw-500">총 시간</td><td>~3분</td><td class="c-acc fw-500">~2분 10초</td></tr>
+          <tr><td class="fw-500">서빙</td><td>바로 서빙</td><td class="c-acc fw-500">스월링 후 얼음잔에 서빙</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="accent-box">
+      <p><strong>핵심:</strong> 서버에 얼음을 넣지 않습니다. 추출 후 얼음잔에 부어 급냉시키는 방식입니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 02. 기본 레시피 ═══ -->
+<section>
+  <div class="container fade-in">
+    <div class="section-num">02</div>
+    <h2 class="section-title">기본 레시피 (4회 균등 푸어링)</h2>
+    <p class="section-body">22g 원두 / 200g 문(92°C) / 4회 × 50g / 30초 간격</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>구간</th><th class="text-center">물의 양</th><th class="text-center">누적</th><th class="text-center">타이밍</th><th>역할</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="fw-500">1차 (뜸)</td>
+            <td class="text-center">50g</td>
+            <td class="text-center">0 → 50g</td>
+            <td class="text-center">0:00</td>
+            <td class="c-dim">CO₂ 방출 + 원두 침투</td>
+          </tr>
+          <tr>
+            <td class="fw-500">2차</td>
+            <td class="text-center">50g</td>
+            <td class="text-center">50 → 100g</td>
+            <td class="text-center">0:30</td>
+            <td class="fw-500">산미 + 단맛 추출</td>
+          </tr>
+          <tr>
+            <td class="fw-500">3차</td>
+            <td class="text-center">50g</td>
+            <td class="text-center">100 → 150g</td>
+            <td class="text-center">1:00</td>
+            <td class="fw-500">바디감 채우기</td>
+          </tr>
+          <tr>
+            <td class="fw-500">4차</td>
+            <td class="text-center">50g</td>
+            <td class="text-center">150 → 200g</td>
+            <td class="text-center">1:30</td>
+            <td class="fw-500">마무리</td>
+          </tr>
+          <tr>
+            <td class="c-red fw-500" colspan="2">드리퍼 제거</td>
+            <td class="text-center">—</td>
+            <td class="text-center c-red">~2:10</td>
+            <td class="c-dim">원두 표면 드러나면 제거</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="accent-box">
+      <p><strong>규칙:</strong> 30초마다 정확히 50g씩. 타이머 필수.</p>
+      <p>2분 10초쯤 원두 베드가 드러나면 드리퍼를 제거합니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 03. 왜 다르게 내리는가 ═══ -->
+<section>
+  <div class="container fade-in">
+    <div class="section-num">03</div>
+    <h2 class="section-title">왜 이렇게 내리는가</h2>
+
+    <div class="accent-box-copper">
+      <p><strong>원두 22g:</strong> 핫(16g)보다 많은 이유 — 얼음에 희석되므로 진하게 추출해야 밸런스가 맞습니다.</p>
+    </div>
+
+    <div class="accent-box-copper">
+      <p><strong>물 200g (92°C):</strong> 총량을 줄이고 온도를 1도 낮춰서 과추출 없이 농축된 맛을 만듭니다.</p>
+    </div>
+
+    <div class="accent-box-copper">
+      <p><strong>4회 균등 푸어링:</strong> 핫과 달리 매회 같은 양(50g)을 부어 균일한 추출을 만듭니다. 변수를 최소화합니다.</p>
+    </div>
+
+    <div class="accent-box">
+      <p><strong>스월링 서빙:</strong> 추출 완료 후 서버를 가볍게 스월링(돌려주기)하여 농도를 균일하게 만든 뒤, 얼음이 가득 찬 서빙잔에 부어줍니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 04. 체크리스트 ═══ -->
+<section>
+  <div class="container fade-in">
+    <div class="section-num">04</div>
+    <h2 class="section-title">바 체크리스트 (STEP 1–8)</h2>
+    <p class="section-body" style="font-size:13px; color:var(--dim); font-style:italic;">프린트해서 바 근처에 붙여두세요</p>
+
+    <div class="step-card">
+      <div class="step-num">STEP 1</div>
+      <div class="step-title">원두 22g 계량</div>
+      <div class="step-detail">핫(16g)보다 6g 더 — 아이스 전용 세팅</div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">STEP 2</div>
+      <div class="step-title">중간 굵기 분쇄</div>
+      <div class="step-detail">핫과 동일한 분쇄도 유지</div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">STEP 3</div>
+      <div class="step-title">물 92°C 준비</div>
+      <div class="step-detail">핫(93°C)보다 1도 낮게 — 과추출 방진</div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">STEP 4</div>
+      <div class="step-title">드리퍼 + 필터 린싱</div>
+      <div class="step-detail">서버에 얼음 넣지 않음 — 빈 서버 위에 드리퍼 세팅</div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">STEP 5</div>
+      <div class="step-title">1차 50g (뜸들이기)</div>
+      <div class="step-detail">타이머 시작. 원두 전체 적시기</div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">STEP 6</div>
+      <div class="step-title">2차~4차 각 50g (30초 간격)</div>
+      <div class="step-detail">0:30 → 100g / 1:00 → 150g / 1:30 → 200g</div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">STEP 7</div>
+      <div class="step-title">~2:10 드리퍼 제거</div>
+      <div class="step-detail">원두 표면이 드러나면 즉시 제거</div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">STEP 8</div>
+      <div class="step-title">스월링 후 얼음잔에 서빙</div>
+      <div class="step-detail">서버를 가볍게 돌려 농도 균일화 → 얼음 가득 찬 잔에 부어 급냉</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 05. 절대 금지 ═══ -->
+<section>
+  <div class="container fade-in">
+    <div class="section-num">05</div>
+    <h2 class="section-title">절대 하지 말 것</h2>
+    <div style="margin-top: 24px;">
+      <div class="warn-box">서버에 얼음을 넣고 추출하지 마세요. 추출 후 얼음잔에 부어야 맛이 깨끗합니다.</div>
+      <div class="warn-box">총 물의 양(200g)을 함부로 바꾸지 마세요. 비율이 깨집니다.</div>
+      <div class="warn-box">30초 간격을 무시하지 마세요. 타이밍이 맛의 핵심입니다.</div>
+      <div class="warn-box">추출 시간 2분 30초를 넘기지 마세요. 쓴맛이 급증합니다.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 06. 요약 테이블 ═══ -->
+<section>
+  <div class="container fade-in">
+    <div class="section-num">06</div>
+    <h2 class="section-title">바 요약표</h2>
+
+    <div class="recipe-card">
+      <div class="recipe-label">아이스 브루잉 레시피</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>구간</th><th>물의 양</th><th>눈적</th><th>타이밍</th></tr></thead>
+          <tbody>
+            <tr><td class="fw-500">1차 (뜸)</td><td>50g</td><td>50g</td><td>0:00</td></tr>
+            <tr><td class="fw-500">2차</td><td>50g</td><td>100g</td><td>0:30</td></tr>
+            <tr><td class="fw-500">3차</td><td>50g</td><td>150g</td><td>1:00</td></tr>
+            <tr><td class="fw-500">4차</td><td>50g</td><td>200g</td><td>1:30</td></tr>
+            <tr class="highlight-row"><td class="c-red">제거</td><td>—</td><td>—</td><td class="c-red">~2:10</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="accent-box">
+      <p><strong>원두:</strong> 22g &nbsp;|&nbsp; <strong>문:</strong> 200g (92°C) &nbsp;|&nbsp; <strong>간격:</strong> 30초 &nbsp;|&nbsp; <strong>서빙:</strong> 스월링 → 얼음잔</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- CLOSING -->
+<div class="closing">
+  <p class="closing-main">
+    진하게 내려서, 차갑게 서빙하세요<br>
+    깔끔한 아이스 커피의 비결입니다
+  </p>
+  <p class="closing-sub">
+    30초 간격으로 정확하게<br>
+    얼음잔에 부어 급냉하면 완성
+  </p>
+  <p class="closing-sign">Find your rest. Feel your rest.</p>
+</div>
+
+<script>
+// Sticky nav on scroll
+const nav = document.getElementById('topNav');
+const hero = document.querySelector('.hero');
+const observer = new IntersectionObserver(([e]) => {
+  nav.classList.toggle('visible', !e.isIntersecting);
+}, { threshold: 0.1 });
+observer.observe(hero);
+
+// Fade-in on scroll
+const faders = document.querySelectorAll('.fade-in');
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15 });
+faders.forEach(el => fadeObserver.observe(el));
+</script>
+</body>
+</html>
