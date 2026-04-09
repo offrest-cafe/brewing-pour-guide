@@ -4,247 +4,370 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>푸어링 브루잉 가이드 — OFFREST ROASTERY</title>
-<meta name="description" content="오프레스트 로스터리 핫·아이스 푸어링 레시피 가이드 — 초보 바리스타용 실전 매뉴얼">
+<meta name="description" content="오프레스트 로스터리 핫·아이스 푸어링 레시피 가이드">
 <style>
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
 
 :root {
   --ink: #1A1A1A;
-  --copper: #C8946D;
-  --warm-bg: #FAF6F1;
-  --ice-blue: #2E86C1;
-  --ice-bg: #EBF5FB;
-  --card-bg: #FFFFFF;
-  --border: #E8E0D8;
-  --ice-border: #BEE0F5;
-  --muted: #888;
-  --radius: 12px;
+  --dim: #777777;
+  --faint: #BBBBBB;
+  --bg: #FAFAFA;
+  --acc: #C8946D;
+  --acc-light: #FAF6F2;
+  --red: #D9534F;
+  --red-light: #FDF2F2;
+  --border: #E8E8E8;
+  --white: #FFFFFF;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--ink);
-  line-height: 1.75;
-  font-size: 15px;
-  background: var(--warm-bg);
-  transition: background 0.4s;
+  background: var(--white);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
 }
 
-body.ice-mode { background: var(--ice-bg); }
-
-/* NAV */
-.top-nav {
-  position: fixed; top: -60px; left: 0; right: 0; z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 14px 24px;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
-  transition: top 0.3s, border-color 0.3s;
-}
-.top-nav.visible { top: 0; }
-body.ice-mode .top-nav { border-bottom-color: var(--ice-border); }
-.nav-brand { font-weight: 700; font-size: 13px; letter-spacing: 2px; color: var(--copper); }
-body.ice-mode .nav-brand { color: var(--ice-blue); }
-.nav-title { font-size: 14px; font-weight: 500; }
-
-/* TAB SWITCHER */
-.tab-bar {
-  display: flex; justify-content: center; gap: 0;
-  margin: 0 auto; max-width: 320px;
-  background: rgba(0,0,0,0.06);
-  border-radius: 10px; padding: 3px;
-  position: relative;
-}
-.tab-btn {
-  flex: 1; padding: 10px 0;
-  font-size: 14px; font-weight: 600;
-  text-align: center; cursor: pointer;
-  border: none; background: none;
-  border-radius: 8px;
-  color: var(--muted);
-  transition: all 0.3s;
-  font-family: inherit;
-}
-.tab-btn.active {
-  background: #fff;
-  color: var(--ink);
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-}
-.tab-btn.active.hot-active { color: var(--copper); }
-.tab-btn.active.ice-active { color: var(--ice-blue); }
-/* HERO */
+/* ── HERO ── */
 .hero {
   min-height: 100vh;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  text-align: center; padding: 80px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 24px;
+  background: linear-gradient(180deg, var(--white) 0%, var(--acc-light) 100%);
 }
-.hero-badge {
-  display: inline-block;
-  padding: 6px 20px;
-  border-radius: 20px;
-  font-size: 12px; font-weight: 700;
-  letter-spacing: 3px;
-  margin-bottom: 16px;
-  transition: all 0.4s;
+.hero-brand {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  color: var(--acc);
+  margin-bottom: 24px;
 }
-.hero-badge.hot { background: var(--copper); color: #fff; }
-.hero-badge.ice { background: var(--ice-blue); color: #fff; }
 .hero h1 {
-  font-size: clamp(28px, 5vw, 42px);
-  font-weight: 700; line-height: 1.3;
-  margin-bottom: 20px;
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 16px;
+  color: var(--ink);
 }
 .hero-divider {
-  width: 40px; height: 3px;
-  margin: 0 auto 20px;
-  transition: background 0.4s;
+  width: 60px;
+  height: 2px;
+  background: var(--acc);
+  margin: 24px auto;
 }
-.hero-divider.hot { background: var(--copper); }
-.hero-divider.ice { background: var(--ice-blue); }
-.hero-recipe { font-size: 15px; color: #555; margin-bottom: 6px; }
-.hero-recipe strong { font-weight: 700; color: var(--ink); }
-.hero-sub { margin-top: 24px; font-size: 13px; color: var(--muted); }
-
-/* SECTIONS */
-section { padding: 80px 20px; }
-.container { max-width: 720px; margin: 0 auto; }
-.section-num {
-  font-size: 64px; font-weight: 700; line-height: 1;
+.hero-recipe {
+  font-size: 15px;
+  color: var(--dim);
   margin-bottom: 8px;
-  transition: color 0.4s;
 }
-.section-num.hot { color: rgba(200,148,109,0.15); }
-.section-num.ice { color: rgba(46,134,193,0.12); }
-.section-title {
-  font-size: 22px; font-weight: 700;
-  margin-bottom: 16px;
+.hero-recipe strong {
+  color: var(--ink);
+  font-size: 17px;
 }
-.section-body {
-  font-size: 15px; color: #444; margin-bottom: 24px;
+.hero-sub {
+  font-size: 13px;
+  color: var(--faint);
+  margin-top: 40px;
 }
 
-/* TABLES */
-.table-wrap { overflow-x: auto; margin: 24px 0; }
+/* ── LAYOUT ── */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 80px 0;
+  border-top: 1px solid var(--border);
+}
+
+.section-num {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--acc);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: clamp(22px, 3.5vw, 30px);
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.section-body {
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+/* ── TABLE ── */
+.table-wrap {
+  overflow-x: auto;
+  margin: 24px 0;
+  -webkit-overflow-scrolling: touch;
+}
+
 table {
-  width: 100%; border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
   font-size: 14px;
 }
+
 thead th {
+  background: var(--bg);
+  font-weight: 500;
   padding: 12px 14px;
-  text-align: left; font-weight: 600;
-  border-bottom: 2px solid var(--border);
+  text-align: left;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
   white-space: nowrap;
 }
-body.ice-mode thead th { border-bottom-color: var(--ice-border); }
-td {
+
+tbody td {
   padding: 10px 14px;
-  border-bottom: 1px solid #f0ebe5;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
 }
-body.ice-mode td { border-bottom-color: #e0edf5; }
-.c-acc { font-weight: 600; }
-.c-acc.hot { color: var(--copper); }
-.c-acc.ice { color: var(--ice-blue); }
-/* CARDS */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px; margin: 24px 0;
-}
-.card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 20px;
-  transition: border-color 0.4s;
-}
-body.ice-mode .card { border-color: var(--ice-border); }
-.card-label { font-size: 12px; font-weight: 700; letter-spacing: 1px; margin-bottom: 6px; }
-.card-label.hot { color: var(--copper); }
-.card-label.ice { color: var(--ice-blue); }
-.card-value { font-size: 22px; font-weight: 700; }
-.card-desc { font-size: 13px; color: var(--muted); margin-top: 4px; }
 
-/* TIP BOX */
-.tip-box {
-  border-radius: var(--radius);
-  padding: 20px 24px;
+tbody tr:last-child td {
+  border-bottom: 2px solid var(--ink);
+}
+
+.c-red { color: #C0392B; font-weight: 500; }
+.c-acc { color: var(--acc); font-weight: 500; }
+.c-purple { color: #6C3483; font-weight: 500; }
+.c-green { color: #1E8449; font-weight: 500; }
+.c-blue { color: #2E86C1; font-weight: 500; }
+.c-dim { color: var(--dim); }
+.fw-500 { font-weight: 500; }
+.text-center { text-align: center; }
+
+/* ── ACCENT BOX ── */
+.accent-box {
+  border-left: 4px solid var(--acc);
+  background: var(--acc-light);
+  padding: 16px 20px;
   margin: 24px 0;
+  border-radius: 0 6px 6px 0;
+}
+.accent-box p {
   font-size: 14px;
-  transition: all 0.4s;
+  line-height: 1.7;
+  margin-bottom: 4px;
 }
-.tip-box.hot {
-  background: rgba(200,148,109,0.08);
-  border-left: 4px solid var(--copper);
-}
-.tip-box.ice {
-  background: rgba(46,134,193,0.07);
-  border-left: 4px solid var(--ice-blue);
-}
-.tip-box strong { display: block; margin-bottom: 4px; }
-.tip-box.hot strong { color: var(--copper); }
-.tip-box.ice strong { color: var(--ice-blue); }
+.accent-box p:last-child { margin-bottom: 0; }
 
-/* STEP FLOW */
-.step-flow {
-  display: flex; flex-wrap: wrap; gap: 12px;
-  justify-content: center;
-  margin: 28px 0;
+/* ── WARN BOX ── */
+.warn-box {
+  border-left: 4px solid var(--red);
+  background: var(--red-light);
+  padding: 14px 20px;
+  margin: 12px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  line-height: 1.7;
 }
-.step-pill {
-  padding: 10px 20px;
-  border-radius: 24px;
-  font-size: 14px; font-weight: 600;
-  transition: all 0.4s;
-}
-.step-pill.hot { background: rgba(200,148,109,0.1); color: var(--copper); }
-.step-pill.ice { background: rgba(46,134,193,0.1); color: var(--ice-blue); }
 
-/* FOOTER */
-.footer {
-  text-align: center;
-  padding: 48px 20px;
+/* ── CASE BLOCK ── */
+.case {
+  margin-bottom: 48px;
+}
+.case:last-child { margin-bottom: 0; }
+
+.case-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--acc);
+  margin-bottom: 6px;
+}
+.case-where {
+  font-size: 13px;
+  color: var(--dim);
+  margin-bottom: 12px;
+}
+.case-where strong {
+  color: var(--ink);
+  font-size: 15px;
+}
+.case-divider {
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 16px;
+}
+.case-step {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.case-detail {
+  font-size: 13px;
+  color: var(--dim);
+  margin-left: 16px;
+  margin-bottom: 12px;
+}
+.case-why {
+  font-size: 13px;
+  color: var(--dim);
+  font-style: italic;
+  margin-top: 12px;
+}
+
+/* ── RECIPE CARD ── */
+.recipe-card {
+  margin-bottom: 36px;
+}
+.recipe-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--acc);
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+.recipe-card table {
+  font-size: 13px;
+}
+.recipe-card thead th {
   font-size: 12px;
-  color: var(--muted);
+  text-align: center;
+}
+.recipe-card tbody td {
+  text-align: center;
+}
+.highlight-row td {
+  font-weight: 500;
+}
+
+/* ── FOOTER ── */
+.closing {
+  text-align: center;
+  padding: 100px 24px;
+  background: linear-gradient(180deg, var(--white) 0%, var(--acc-light) 100%);
+}
+.closing-main {
+  font-size: clamp(18px, 3vw, 24px);
+  font-weight: 700;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.closing-sub {
+  font-size: 15px;
+  color: var(--dim);
+  line-height: 1.8;
+  margin-bottom: 48px;
+}
+.closing-sign {
+  font-size: 13px;
+  color: var(--faint);
+  font-style: italic;
   letter-spacing: 1px;
 }
 
-/* FADE IN */
-.fade-in {
-  opacity: 0; transform: translateY(24px);
-  transition: opacity 0.6s, transform 0.6s;
+/* ── NAV ── */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s, transform 0.3s;
 }
-.fade-in.show { opacity: 1; transform: none; }
+.top-nav.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.nav-brand {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: var(--acc);
+}
+.nav-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  section { padding: 60px 0; }
+  .case { margin-bottom: 36px; }
+  thead th, tbody td { padding: 8px 10px; font-size: 13px; }
+  .recipe-card thead th, .recipe-card tbody td { font-size: 12px; padding: 6px 8px; }
+}
+
+/* ── SCROLL ANIMATION ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ICE MODE */
+:root { --ice-blue: #2E86C1; --ice-bg: #EBF5FB; --ice-border: #BEE0F5; }
+body.ice-mode { background: var(--ice-bg); }
+body.ice-mode .top-nav { border-bottom-color: var(--ice-border); }
+body.ice-mode .nav-brand { color: var(--ice-blue); }
+body.ice-mode thead th { border-bottom-color: var(--ice-border); }
+body.ice-mode td { border-bottom-color: #e0edf5; }
+body.ice-mode .card { border-color: var(--ice-border); }
+.hero-badge { display:inline-block; padding:6px 20px; border-radius:20px; font-size:12px; font-weight:700; letter-spacing:3px; margin-bottom:16px; }
+.hero-badge.hot { background:var(--copper); color:#fff; }
+.hero-badge.ice { background:var(--ice-blue); color:#fff; }
+.hero-divider.ice { background:var(--ice-blue); }
+.section-num.ice { color:rgba(46,134,193,0.12); }
+.c-acc.ice { color:var(--ice-blue); }
+.tip-box.ice { background:rgba(46,134,193,0.07); border-left:4px solid var(--ice-blue); }
+.tip-box.ice strong { color:var(--ice-blue); }
+.card-label.ice { color:var(--ice-blue); }
+.step-pill.ice { background:rgba(46,134,193,0.1); color:var(--ice-blue); }
+.tab-btn.active.ice-active { color:var(--ice-blue); }
+
 </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav class="top-nav" id="topNav">
-  <span class="nav-brand">OFFREST ROASTERY</span>
-  <div class="tab-bar" id="navTabBar">
-    <button class="tab-btn active hot-active" data-mode="hot">HOT</button>
-    <button class="tab-btn" data-mode="ice">ICE</button>
-  </div>
-  <span class="nav-title" id="navTitle">푸어링 맛 조절 가이드</span>
-</nav>
-
-<!-- ===================== HOT CONTENT ===================== -->
+<nav class="top-nav" id="topNav"><span class="nav-brand">OFFREST ROASTERY</span><div class="tab-bar" id="navTabBar"><button class="tab-btn active hot-active" data-mode="hot">HOT</button><button class="tab-btn" data-mode="ice">ICE</button></div><span class="nav-title" id="navTitle">푸어링 맛 조절 가이드</span></nav>
 <div id="hotContent">
+
+
 <!-- NAV -->
 
 
 <!-- HERO -->
-<div class="hero"><span class="hero-badge hot">HOT BREWING</span>
+<div class="hero">
   <div class="hero-brand">OFFREST ROASTERY</div>
   <h1>푸어링 구간별<br>맛 조절 가이드</h1>
-  <div class="hero-divider hot"></div>
+  <div class="hero-divider"></div>
   <p class="hero-recipe">원두 16g &nbsp;/&nbsp; 총 물 240g &nbsp;/&nbsp; 3회 푸어링</p>
   <p class="hero-recipe"><strong>1차 뜸 50g &nbsp;→&nbsp; 2차 120g &nbsp;→&nbsp; 3차 240g</strong></p>
-  <div class="tab-bar" style="margin-top: 32px;"><button class="tab-btn active hot-active" data-mode="hot">HOT 레시피</button><button class="tab-btn" data-mode="ice">ICE 레시피</button></div><p class="hero-sub">초보 바리스타용 실전 매뉴얼 · 2026. 04</p>
+  <div class="tab-bar" style="margin-top:32px;"><button class="tab-btn active hot-active" data-mode="hot">HOT 레시피</button><button class="tab-btn" data-mode="ice">ICE 레시피</button></div>
+  <p class="hero-sub">초보 바리스타용 실전 매뉴얼 &middot; 2026. 04</p>
 </div>
 
 <main>
@@ -252,7 +375,7 @@ body.ice-mode .card { border-color: var(--ice-border); }
 <!-- ═══ 01. 핵심 원리 ═══ -->
 <section>
   <div class="container fade-in">
-    <div class="section-num hot">01</div>
+    <div class="section-num">01</div>
     <h2 class="section-title">커피 맛은 순서대로 나옵니다</h2>
     <p class="section-body">커피에 물을 부으면 성분이 한꺼번에 나오지 않습니다.<br>작은 분자가 먼저, 큰 분자가 나중에 녹아 나옵니다.</p>
 
@@ -269,9 +392,9 @@ body.ice-mode .card { border-color: var(--ice-border); }
             <td class="c-dim">레몬즙의 첫 신맛</td>
           </tr>
           <tr>
-            <td class="c-acc text-center hot">중반</td>
+            <td class="c-acc text-center">중반</td>
             <td>당류 / 캐러멜</td>
-            <td class="c-acc hot">단맛 — 스위트 스팟</td>
+            <td class="c-acc">단맛 — 스위트 스팟</td>
             <td class="c-dim">쿠키 굽는 고소한 향</td>
           </tr>
           <tr>
@@ -294,7 +417,7 @@ body.ice-mode .card { border-color: var(--ice-border); }
 <!-- ═══ 02. 기준 레시피 분해 ═══ -->
 <section>
   <div class="container fade-in">
-    <div class="section-num hot">02</div>
+    <div class="section-num">02</div>
     <h2 class="section-title">기준 레시피 분해</h2>
     <p class="section-body">오프레스트 기본 레시피를 구간별로 분해하면 이렇습니다.</p>
 
@@ -315,14 +438,14 @@ body.ice-mode .card { border-color: var(--ice-border); }
             <td class="fw-500">2차</td>
             <td class="text-center">70g</td>
             <td class="text-center">50 → 120g</td>
-            <td class="text-center"><span class="c-red">산미</span> + <span class="c-acc hot">단맛</span></td>
+            <td class="text-center"><span class="c-red">산미</span> + <span class="c-acc">단맛</span></td>
             <td class="fw-500">맛의 방향을 결정</td>
           </tr>
           <tr>
             <td class="fw-500">3차</td>
             <td class="text-center">120g</td>
             <td class="text-center">120 → 240g</td>
-            <td class="text-center"><span class="c-acc hot">단맛</span> + <span class="c-purple">바디</span></td>
+            <td class="text-center"><span class="c-acc">단맛</span> + <span class="c-purple">바디</span></td>
             <td class="fw-500">농도와 무게감을 채움</td>
           </tr>
         </tbody>
@@ -339,7 +462,7 @@ body.ice-mode .card { border-color: var(--ice-border); }
 <!-- ═══ 03. 상황별 조절법 ═══ -->
 <section>
   <div class="container fade-in">
-    <div class="section-num hot">03</div>
+    <div class="section-num">03</div>
     <h2 class="section-title">상황별 조절법</h2>
 
     <!-- Case 1 -->
@@ -410,7 +533,7 @@ body.ice-mode .card { border-color: var(--ice-border); }
 <!-- ═══ 04. 요약표 ═══ -->
 <section>
   <div class="container fade-in">
-    <div class="section-num hot">04</div>
+    <div class="section-num">04</div>
     <h2 class="section-title">한눈에 보는 요약표</h2>
     <p class="section-body" style="font-size:13px; color:var(--dim); font-style:italic;">프린트해서 바 근처에 붙여두세요</p>
 
@@ -421,7 +544,7 @@ body.ice-mode .card { border-color: var(--ice-border); }
         </thead>
         <tbody>
           <tr>
-            <td class="c-acc fw-500 hot">단맛 늘려주세요</td>
+            <td class="c-acc fw-500">단맛 늘려주세요</td>
             <td>2차 푸어</td>
             <td>2차를 2번 나눠 천천히</td>
             <td class="c-dim">총량 240g 유지</td>
@@ -459,7 +582,7 @@ body.ice-mode .card { border-color: var(--ice-border); }
 <!-- ═══ 05. 절대 금지 ═══ -->
 <section>
   <div class="container fade-in">
-    <div class="section-num hot">05</div>
+    <div class="section-num">05</div>
     <h2 class="section-title">절대 하지 말 것</h2>
     <div style="margin-top: 24px;">
       <div class="warn-box">한번에 두 가지 이상 바꾸지 마세요. 뭐가 원인인지 모릅니다.</div>
@@ -472,7 +595,7 @@ body.ice-mode .card { border-color: var(--ice-border); }
 <!-- ═══ 06. 실전 레시피 ═══ -->
 <section>
   <div class="container fade-in">
-    <div class="section-num hot">06</div>
+    <div class="section-num">06</div>
     <h2 class="section-title">실전 레시피 변형</h2>
 
     <div class="recipe-card">
@@ -496,8 +619,8 @@ body.ice-mode .card { border-color: var(--ice-border); }
           <thead><tr><th>구간</th><th>물의 양</th><th>누적</th><th>속도</th><th>대기</th></tr></thead>
           <tbody>
             <tr><td class="fw-500">1차 (뜸)</td><td>50g</td><td>50g</td><td>천천히</td><td>30초</td></tr>
-            <tr class="highlight-row"><td class="c-acc hot">2차-A</td><td class="c-acc hot">30g</td><td>80g</td><td class="c-acc hot">천천히</td><td>10초</td></tr>
-            <tr class="highlight-row"><td class="c-acc hot">2차-B</td><td class="c-acc hot">50g</td><td>130g</td><td class="c-acc hot">천천히</td><td>—</td></tr>
+            <tr class="highlight-row"><td class="c-acc">2차-A</td><td class="c-acc">30g</td><td>80g</td><td class="c-acc">천천히</td><td>10초</td></tr>
+            <tr class="highlight-row"><td class="c-acc">2차-B</td><td class="c-acc">50g</td><td>130g</td><td class="c-acc">천천히</td><td>—</td></tr>
             <tr><td class="fw-500">3차</td><td>110g</td><td>240g</td><td>보통</td><td>—</td></tr>
           </tbody>
         </table>
@@ -535,10 +658,13 @@ body.ice-mode .card { border-color: var(--ice-border); }
   </p>
   <p class="closing-sign">Find your rest. Feel your rest.</p>
 </div>
-</div>
 
-<!-- ===================== ICE CONTENT ===================== -->
+
+
+</div>
 <div id="iceContent" style="display:none;">
+
+
 <!-- NAV -->
 
 
@@ -547,10 +673,11 @@ body.ice-mode .card { border-color: var(--ice-border); }
   <div class="hero-badge">ICE BREWING</div>
   <div class="hero-brand">OFFREST ROASTERY</div>
   <h1>아이스 브루잉<br>레시피 가이드</h1>
-  <div class="hero-divider ice"></div>
+  <div class="hero-divider"></div>
   <p class="hero-recipe">원두 22g &nbsp;/&nbsp; 총 물 200g &nbsp;/&nbsp; 4회 푸어링</p>
   <p class="hero-recipe"><strong>50g × 4회 &nbsp;/ &nbsp;30초 간격 &nbsp;/ &nbsp;물 92°C</strong></p>
-  <div class="tab-bar" style="margin-top: 32px;"><button class="tab-btn" data-mode="hot">HOT 레시피</button><button class="tab-btn active ice-active" data-mode="ice">ICE 레시피</button></div><p class="hero-sub">초보 바리스타용 실전 매뉴얼 · 2026. 04</p>
+  <div class="tab-bar" style="margin-top:32px;"><button class="tab-btn" data-mode="hot">HOT 레시피</button><button class="tab-btn active ice-active" data-mode="ice">ICE 레시피</button></div>
+  <p class="hero-sub">초보 바리스타용 실전 매뉴얼 &middot; 2026. 04</p>
 </div>
 
 <main>
@@ -558,7 +685,7 @@ body.ice-mode .card { border-color: var(--ice-border); }
 <!-- ═══ 01. HOT vs ICE 비교 ═══ -->
 <section>
   <div class="container fade-in">
-    <div class="section-num ice">01</div>
+    <div class="section-num">01</div>
     <h2 class="section-title">핫 vs 아이스 — 무엇이 다른가</h2>
     <p class="section-body">같은 원두라도 온도와 추출 방식에 따라 맛이 완전히 달라집니다.<br>아이스는 진하게 추출한 뒤 급냉한여 깔끔한 맛을 만듭니다.</p>
 
@@ -568,12 +695,12 @@ body.ice-mode .card { border-color: var(--ice-border); }
           <tr><th>항목</th><th>핫 브루잉</th><th>아이스 브루잉</th></tr>
         </thead>
         <tbody>
-          <tr><td class="fw-500">원두</td><td>16g</td><td class="c-acc fw-500 ice">22g</td></tr>
-          <tr><td class="fw-500">총 물</td><td>240g (3회)</td><td class="c-acc fw-500 ice">200g (4회)</td></tr>
-          <tr><td class="fw-500">물 온도</td><td>93°C</td><td class="c-acc fw-500 ice">92°C</td></tr>
-          <tr><td class="fw-500">푸어링</td><td>50g → 70g → 120g</td><td class="c-acc fw-500 ice">50g × 4회 (30초 간격)</td></tr>
-          <tr><td class="fw-500">총 시간</td><td>~3분</td><td class="c-acc fw-500 ice">~2분 10초</td></tr>
-          <tr><td class="fw-500">서빙</td><td>바로 서빙</td><td class="c-acc fw-500 ice">스월링 후 얼음잔에 서빙</td></tr>
+          <tr><td class="fw-500">원두</td><td>16g</td><td class="c-acc fw-500">22g</td></tr>
+          <tr><td class="fw-500">총 물</td><td>240g (3회)</td><td class="c-acc fw-500">200g (4회)</td></tr>
+          <tr><td class="fw-500">물 온도</td><td>93°C</td><td class="c-acc fw-500">92°C</td></tr>
+          <tr><td class="fw-500">푸어링</td><td>50g → 70g → 120g</td><td class="c-acc fw-500">50g × 4회 (30초 간격)</td></tr>
+          <tr><td class="fw-500">총 시간</td><td>~3분</td><td class="c-acc fw-500">~2분 10초</td></tr>
+          <tr><td class="fw-500">서빙</td><td>바로 서빙</td><td class="c-acc fw-500">스월링 후 얼음잔에 서빙</td></tr>
         </tbody>
       </table>
     </div>
@@ -587,7 +714,7 @@ body.ice-mode .card { border-color: var(--ice-border); }
 <!-- ═══ 02. 기본 레시피 ═══ -->
 <section>
   <div class="container fade-in">
-    <div class="section-num ice">02</div>
+    <div class="section-num">02</div>
     <h2 class="section-title">기본 레시피 (4회 균등 푸어링)</h2>
     <p class="section-body">22g 원두 / 200g 물(92°C) / 4회 × 50g / 30초 간격</p>
 
@@ -645,7 +772,7 @@ body.ice-mode .card { border-color: var(--ice-border); }
 <!-- ═══ 03. 왜 다르게 내리는가 ═══ -->
 <section>
   <div class="container fade-in">
-    <div class="section-num ice">03</div>
+    <div class="section-num">03</div>
     <h2 class="section-title">왜 이렇게 내리는가</h2>
 
     <div class="accent-box-copper">
@@ -669,7 +796,7 @@ body.ice-mode .card { border-color: var(--ice-border); }
 <!-- ═══ 04. 체크리스트 ═══ -->
 <section>
   <div class="container fade-in">
-    <div class="section-num ice">04</div>
+    <div class="section-num">04</div>
     <h2 class="section-title">바 체크리스트 (STEP 1–8)</h2>
     <p class="section-body" style="font-size:13px; color:var(--dim); font-style:italic;">프린트해서 바 근처에 붙여두세요</p>
 
@@ -726,7 +853,7 @@ body.ice-mode .card { border-color: var(--ice-border); }
 <!-- ═══ 05. 절대 금지 ═══ -->
 <section>
   <div class="container fade-in">
-    <div class="section-num ice">05</div>
+    <div class="section-num">05</div>
     <h2 class="section-title">절대 하지 말 것</h2>
     <div style="margin-top: 24px;">
       <div class="warn-box">서버에 얼음을 넣고 추출하지 마세요. 추출 후 얼음잔에 부어야 맛이 깨끗합니다.</div>
@@ -740,7 +867,7 @@ body.ice-mode .card { border-color: var(--ice-border); }
 <!-- ═══ 06. 요약 테이블 ═══ -->
 <section>
   <div class="container fade-in">
-    <div class="section-num ice">06</div>
+    <div class="section-num">06</div>
     <h2 class="section-title">바 요약표</h2>
 
     <div class="recipe-card">
@@ -779,81 +906,16 @@ body.ice-mode .card { border-color: var(--ice-border); }
   </p>
   <p class="closing-sign">Find your rest. Feel your rest.</p>
 </div>
-</div>
 
-<!-- FOOTER -->
-<div class="footer">
-  OFFREST ROASTERY · 푸어링 브루잉 가이드 · 2026. 04
-</div>
 
+
+</div>
+<div class="footer">OFFREST ROASTERY · 푸어링 브루잉 가이드 · 2026. 04</div>
 <script>
-
-// Tab switching
-function switchMode(mode) {
-  const body = document.body;
-  const hotContent = document.getElementById('hotContent');
-  const iceContent = document.getElementById('iceContent');
-  const navTitle = document.getElementById('navTitle');
-
-  if (mode === 'ice') {
-    body.classList.add('ice-mode');
-    hotContent.style.display = 'none';
-    iceContent.style.display = 'block';
-    navTitle.textContent = '아이스 브루잉 가이드';
-  } else {
-    body.classList.remove('ice-mode');
-    hotContent.style.display = 'block';
-    iceContent.style.display = 'none';
-    navTitle.textContent = '푸어링 맛 조절 가이드';
-  }
-
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    const isActive = btn.dataset.mode === mode;
-    btn.classList.toggle('active', isActive);
-    btn.classList.toggle('hot-active', isActive && mode === 'hot');
-    btn.classList.toggle('ice-active', isActive && mode === 'ice');
-  });
-
-  window.scrollTo({ top: 0, behavior: 'instant' });
-
-  setTimeout(() => {
-    document.querySelectorAll('.fade-in').forEach(el => {
-      el.classList.remove('show');
-    });
-    observeFadeIns();
-  }, 50);
-}
-
-document.addEventListener('click', e => {
-  if (e.target.classList.contains('tab-btn') && e.target.dataset.mode) {
-    switchMode(e.target.dataset.mode);
-  }
-});
-
-const nav = document.getElementById('topNav');
-let lastScroll = 0;
-window.addEventListener('scroll', () => {
-  const y = window.scrollY;
-  if (y > 300) {
-    nav.classList.add('visible');
-  } else {
-    nav.classList.remove('visible');
-  }
-  lastScroll = y;
-});
-
-function observeFadeIns() {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
-    });
-  }, { threshold: 0.15 });
-  document.querySelectorAll('.fade-in:not(.show)').forEach(el => observer.observe(el));
-}
-observeFadeIns();
-
+function switchMode(m){var b=document.body,h=document.getElementById("hotContent"),i=document.getElementById("iceContent"),t=document.getElementById("navTitle");if(m==="ice"){b.classList.add("ice-mode");h.style.display="none";i.style.display="block";t.textContent="아이스 브루잉 가이드";}else{b.classList.remove("ice-mode");h.style.display="block";i.style.display="none";t.textContent="푸어링 맛 조절 가이드";}document.querySelectorAll(".tab-btn").forEach(function(btn){var a=btn.dataset.mode===m;btn.classList.toggle("active",a);btn.classList.toggle("hot-active",a&&m==="hot");btn.classList.toggle("ice-active",a&&m==="ice");});window.scrollTo({top:0,behavior:"instant"});setTimeout(function(){document.querySelectorAll(".fade-in").forEach(function(el){el.classList.remove("show");});observeFadeIns();},50);}
+document.addEventListener("click",function(e){if(e.target.classList.contains("tab-btn")&&e.target.dataset.mode){switchMode(e.target.dataset.mode);}});
+var nav=document.getElementById("topNav");window.addEventListener("scroll",function(){if(window.scrollY>300){nav.classList.add("visible");}else{nav.classList.remove("visible");}});
+function observeFadeIns(){var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("show");}});},{threshold:0.15});document.querySelectorAll(".fade-in:not(.show)").forEach(function(el){o.observe(el);});}observeFadeIns();
 </script>
 </body>
 </html>
