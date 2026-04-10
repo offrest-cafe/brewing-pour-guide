@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
+<html lang="ko"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>푸어링 브루잉 가이드 — OFFREST ROASTERY</title>
@@ -353,187 +352,9 @@ body.ice-mode .card { border-color: var(--ice-border); }
 </head>
 <body>
 <nav class="top-nav" id="topNav"><span class="nav-brand">OFFREST ROASTERY</span><div class="tab-bar" id="navTabBar"><button class="tab-btn active hot-active" data-mode="hot">HOT</button><button class="tab-btn" data-mode="ice">ICE</button></div><span class="nav-title" id="navTitle">푸어링 맛 조절 가이드</span></nav>
-<div id="hotContent">
-
-
-<!-- NAV -->
-
-
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-brand">OFFREST ROASTERY</div>
-  <h1>푸어링 구간별<br>맛 조절 가이드</h1>
-  <div class="hero-divider"></div>
-  <p class="hero-recipe">원두 16g &nbsp;/&nbsp; 총 물 240g &nbsp;/&nbsp; 3회 푸어링</p>
-  <p class="hero-recipe"><strong>1차 뜸 50g &nbsp;→&nbsp; 2차 120g &nbsp;→&nbsp; 3차 240g</strong></p>
-  <div class="tab-bar" style="margin-top:32px;"><button class="tab-btn active hot-active" data-mode="hot">HOT 레시피</button><button class="tab-btn" data-mode="ice">ICE 레시피</button></div>
-  <p class="hero-sub">초보 바리스타용 실전 매뉴얼 &middot; 2026. 04</p>
-</div>
-
-<main>
-
-<!-- ═══ 01. 핵심 원리 ═══ -->
-<section>
-  <div class="container fade-in">
-    <div class="section-num">01</div>
-    <h2 class="section-title">커피 맛은 순서대로 나옵니다</h2>
-    <p class="section-body">커피에 물을 부으면 성분이 한꺼번에 나오지 않습니다.<br>작은 분자가 먼저, 큰 분자가 나중에 녹아 나옵니다.</p>
-
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>순서</th><th>성분</th><th>맛</th><th>쉬운 비유</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="c-red text-center">초반</td>
-            <td>유기산 (작은 분자)</td>
-            <td class="c-red">산미 — 신맛</td>
-            <td class="c-dim">레몬즙의 첫 신맛</td>
-          </tr>
-          <tr>
-            <td class="c-acc text-center">중반</td>
-            <td>당류 / 캐러멜</td>
-            <td class="c-acc">단맛 — 스위트 스팟</td>
-            <td class="c-dim">쿠키 굽는 고소한 향</td>
-          </tr>
-          <tr>
-            <td class="c-purple text-center">후반</td>
-            <td>타닌 / 카페인 (큰 분자)</td>
-            <td class="c-purple">쓴맛 — 떫은맛</td>
-            <td class="c-dim">티백 너무 오래 우린 맛</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="accent-box">
-      <p><strong>기억법:</strong> 산(신맛) → 단(단맛) → 쓴(쓴맛)</p>
-      <p>추출이 길어질수록 쓴맛이 늘어납니다. 차 티백과 같은 원리입니다.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 02. 기준 레시피 분해 ═══ -->
-<section>
+<div id="hotContent"><section class="fade-in"><div class="section-num">01</div><h2 class="section-title">바 요약표</h2><p class="section-sub">핫 브루잉 레시피</p><table><thead><tr><th>구간</th><th>물의 양</th><th>누적</th><th>타이밍</th></tr></thead><tbody><tr><td><strong>1차 (뜸)</strong></td><td>50g</td><td>50g</td><td>0:00</td></tr><tr><td><strong>2차</strong></td><td>70g</td><td>120g</td><td>1:00</td></tr><tr><td><strong>3차</strong></td><td>110g</td><td>230g</td><td>1:30</td></tr></tbody></table><div class="tip-box"><strong>원두:</strong> 16g ｜ <strong>물:</strong> 230g (92°C) ｜ <strong>서빙:</strong> 컵에 바로</div></section><section>
   <div class="container fade-in">
     <div class="section-num">02</div>
-    <h2 class="section-title">기준 레시피 분해</h2>
-    <p class="section-body">오프레스트 기본 레시피를 구간별로 분해하면 이렇습니다.</p>
-
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>구간</th><th class="text-center">물의 양</th><th class="text-center">누적</th><th class="text-center">추출되는 맛</th><th>역할</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="fw-500">1차 (뜸)</td>
-            <td class="text-center">50g</td>
-            <td class="text-center">0 → 50g</td>
-            <td class="text-center c-dim">—</td>
-            <td class="c-dim">CO₂ 방출 + 물 침투 준비</td>
-          </tr>
-          <tr>
-            <td class="fw-500">2차</td>
-            <td class="text-center">70g</td>
-            <td class="text-center">50 → 120g</td>
-            <td class="text-center"><span class="c-red">산미</span> + <span class="c-acc">단맛</span></td>
-            <td class="fw-500">맛의 방향을 결정</td>
-          </tr>
-          <tr>
-            <td class="fw-500">3차</td>
-            <td class="text-center">120g</td>
-            <td class="text-center">120 → 240g</td>
-            <td class="text-center"><span class="c-acc">단맛</span> + <span class="c-purple">바디</span></td>
-            <td class="fw-500">농도와 무게감을 채움</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="accent-box">
-      <p><strong>2차 푸어</strong> = 맛의 방향 (신맛/단맛 밸런스)</p>
-      <p><strong>3차 푸어</strong> = 농도 (진하게 or 가볍게)</p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 03. 상황별 조절법 ═══ -->
-<section>
-  <div class="container fade-in">
-    <div class="section-num">03</div>
-    <h2 class="section-title">상황별 조절법</h2>
-
-    <!-- Case 1 -->
-    <div class="case">
-      <div class="case-title">"단맛을 더 느끼고 싶어요"</div>
-      <div class="case-where">건드리는 곳 &nbsp;<strong>2차 푸어</strong></div>
-      <div class="case-divider"></div>
-      <p class="case-step">2차를 2번으로 나눠서 천천히 붓기</p>
-      <p class="case-detail">기존: 50g → 120g (한번에 70g)</p>
-      <p class="case-detail">변경: 50g → 80g (30g) → 130g (50g) — 각각 천천히</p>
-      <p class="case-why">원리: 단맛 성분(당류)은 추출 중반에 나옵니다. 천천히 부으면 단맛이 충분히 녹아나올 시간이 생깁니다.</p>
-      <div class="warn-box">3차를 130g → 240g(110g)으로 줄여서 총량 240g 유지할 것</div>
-    </div>
-
-    <!-- Case 2 -->
-    <div class="case">
-      <div class="case-title">"신맛이 너무 강해요"</div>
-      <div class="case-where">건드리는 곳 &nbsp;<strong>1차 뜸 + 물 온도</strong></div>
-      <div class="case-divider"></div>
-      <p class="case-step">A) 뜸 물량 늘리기: 50g → 55~60g</p>
-      <p class="case-detail">CO₂가 더 빠지고 초반 산미 성분이 뜸 물에 녹아 빠져나감</p>
-      <p class="case-step">B) 물 온도 2도 낭추기: 93도 → 91도</p>
-      <p class="case-detail">온도가 낮으면 산미 성분이 덜 추출됨</p>
-      <p class="case-why">원리: 유기산은 분자가 작아 가장 먼저 녹아나옵니다. 뜸에서 미리 빼주면 이후 푸어에서 산미가 줄어듭니다.</p>
-      <div class="warn-box">뜸 물 70g 이상은 금지 — 맛이 묽어집니다</div>
-    </div>
-
-    <!-- Case 3 -->
-    <div class="case">
-      <div class="case-title">"쓴맛이 강해요 / 떫어요"</div>
-      <div class="case-where">건드리는 곳 &nbsp;<strong>3차 푸어</strong></div>
-      <div class="case-divider"></div>
-      <p class="case-step">A) 3차를 빠르게 한번에 확 붓기</p>
-      <p class="case-detail">물이 빨리 빠지메 쓴맛 성분이 덜 추출됨</p>
-      <p class="case-step">B) 총량 240g 대신 230g에서 컷</p>
-      <p class="case-detail">마지막 10g의 쓴맛/떫은맛을 아예 제거</p>
-      <p class="case-step">C) 분쇄도를 한 칸 굵게</p>
-      <p class="case-detail">물이 빨리 빠져 전체 추출 시간이 줄어듦</p>
-      <p class="case-why">원리: 쓴맛 성분(타닌, 카페인)은 분자가 커서 항상 마지막에 나옵니다.</p>
-      <div class="warn-box">문이 거의 다 빠졌을 때 드리퍼 제거. 너무 일찍 빼메 묽어짐</div>
-    </div>
-
-    <!-- Case 4 -->
-    <div class="case">
-      <div class="case-title">"묵직하고 진하게 마시고 싶어요"</div>
-      <div class="case-where">건드리는 곳 &nbsp;<strong>3차 푸어 + 분쇄도</strong></div>
-      <div class="case-divider"></div>
-      <p class="case-step">3차를 천천히 느리게 붓기</p>
-      <p class="case-detail">젝촉 시간이 늘어나 더 많은 성분이 녹아나옴</p>
-      <p class="case-step">분쇄도 한 칸 가늘게</p>
-      <p class="case-detail">물이 천천히 빠져 젝촉 시간 추가 증가</p>
-      <div class="warn-box">추출 시간 4분 넘기면 쓴맛이 급즥합니다</div>
-    </div>
-
-    <!-- Case 5 -->
-    <div class="case">
-      <div class="case-title">"깨끗하고 가볍게 마시고 싶어요"</div>
-      <div class="case-where">건드리는 곳 &nbsp;<strong>3차 푸어 + 분쇄도</strong></div>
-      <div class="case-divider"></div>
-      <p class="case-step">3차를 한번에 확 붓고 빠르게</p>
-      <p class="case-detail">무거운 성분이 덜 추출됨</p>
-      <p class="case-step">분쇄도 한 칸 굵게</p>
-      <p class="case-detail">물이 빠르게 빠져 전체 추출 시간 단축</p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 04. 요약표 ═══ -->
-<section>
-  <div class="container fade-in">
-    <div class="section-num">04</div>
     <h2 class="section-title">한눈에 보는 요약표</h2>
     <p class="section-body" style="font-size:13px; color:var(--dim); font-style:italic;">프린트해서 바 근처에 붙여두세요</p>
 
@@ -577,142 +398,114 @@ body.ice-mode .card { border-color: var(--ice-border); }
       </table>
     </div>
   </div>
-</section>
-
-<!-- ═══ 05. 절대 금지 ═══ -->
-<section>
+</section><section>
   <div class="container fade-in">
-    <div class="section-num">05</div>
-    <h2 class="section-title">절대 하지 말 것</h2>
-    <div style="margin-top: 24px;">
-      <div class="warn-box">한번에 두 가지 이상 바꾸지 마세요. 뭐가 원인인지 모릅니다.</div>
-      <div class="warn-box">총 물의 양(240g)을 함부로 바꾸지 마세요. 구간 배분만 바꾸세요.</div>
-      <div class="warn-box">추출 시간 4분을 넘기지 마세요. 쓴맛이 급격히 늘어납니다.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 06. 실전 레시피 ═══ -->
-<section>
-  <div class="container fade-in">
-    <div class="section-num">06</div>
-    <h2 class="section-title">실전 레시피 변형</h2>
-
-    <div class="recipe-card">
-      <div class="recipe-label">기본 (균형)</div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>구간</th><th>물의 양</th><th>누적</th><th>속도</th><th>대기</th></tr></thead>
-          <tbody>
-            <tr><td class="fw-500">1차 (뜸)</td><td>50g</td><td>50g</td><td>천천히</td><td>30초</td></tr>
-            <tr><td class="fw-500">2차</td><td>70g</td><td>120g</td><td>보통</td><td>—</td></tr>
-            <tr><td class="fw-500">3차</td><td>120g</td><td>240g</td><td>보통</td><td>—</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="recipe-card">
-      <div class="recipe-label">단맛 강화</div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>구간</th><th>물의 양</th><th>누적</th><th>속도</th><th>대기</th></tr></thead>
-          <tbody>
-            <tr><td class="fw-500">1차 (뜸)</td><td>50g</td><td>50g</td><td>천천히</td><td>30초</td></tr>
-            <tr class="highlight-row"><td class="c-acc">2차-A</td><td class="c-acc">30g</td><td>80g</td><td class="c-acc">천천히</td><td>10초</td></tr>
-            <tr class="highlight-row"><td class="c-acc">2차-B</td><td class="c-acc">50g</td><td>130g</td><td class="c-acc">천천히</td><td>—</td></tr>
-            <tr><td class="fw-500">3차</td><td>110g</td><td>240g</td><td>보통</td><td>—</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="recipe-card">
-      <div class="recipe-label">깨끗하고 가벼움</div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>구간</th><th>물의 양</th><th>누적</th><th>속도</th><th>대기</th></tr></thead>
-          <tbody>
-            <tr><td class="fw-500">1차 (뜸)</td><td>50g</td><td>50g</td><td>천천히</td><td>30초</td></tr>
-            <tr><td class="fw-500">2차</td><td>70g</td><td>120g</td><td>보통</td><td>—</td></tr>
-            <tr class="highlight-row"><td class="c-blue">3차</td><td class="c-blue">120g</td><td>240g</td><td class="c-blue">빠르게 확!</td><td>—</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <p style="font-size:13px; color:var(--dim); font-style:italic;">분쇄도 한 칸 굵게 + 3차 빠르게 → 물이 빠르게 빠져 깨끗한 맛</p>
-  </div>
-</section>
-
-</main>
-
-<!-- CLOSING -->
-<div class="closing">
-  <p class="closing-main">
-    앞쪽 푸어(뜸/2차) = 맛의 방향<br>
-    뒤쪽 푸어(3차) = 농도와 무게
-  </p>
-  <p class="closing-sub">
-    천천히 부으면 더 많이 녹아나온다<br>
-    빨리 부으메 덜 녹아나온다
-  </p>
-  <p class="closing-sign">Find your rest. Feel your rest.</p>
-</div>
-
-
-
-</div>
-<div id="iceContent" style="display:none;">
-
-
-<!-- NAV -->
-
-
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-badge">ICE BREWING</div>
-  <div class="hero-brand">OFFREST ROASTERY</div>
-  <h1>아이스 브루잉<br>레시피 가이드</h1>
-  <div class="hero-divider"></div>
-  <p class="hero-recipe">원두 22g &nbsp;/&nbsp; 총 물 200g &nbsp;/&nbsp; 4회 푸어링</p>
-  <p class="hero-recipe"><strong>50g × 4회 &nbsp;/ &nbsp;30초 간격 &nbsp;/ &nbsp;물 92°C</strong></p>
-  <div class="tab-bar" style="margin-top:32px;"><button class="tab-btn" data-mode="hot">HOT 레시피</button><button class="tab-btn active ice-active" data-mode="ice">ICE 레시피</button></div>
-  <p class="hero-sub">초보 바리스타용 실전 매뉴얼 &middot; 2026. 04</p>
-</div>
-
-<main>
-
-<!-- ═══ 01. HOT vs ICE 비교 ═══ -->
-<section>
-  <div class="container fade-in">
-    <div class="section-num">01</div>
-    <h2 class="section-title">핫 vs 아이스 — 무엇이 다른가</h2>
-    <p class="section-body">같은 원두라도 온도와 추출 방식에 따라 맛이 완전히 달라집니다.<br>아이스는 진하게 추출한 뒤 급냉한여 깔끔한 맛을 만듭니다.</p>
+    <div class="section-num">03</div>
+    <h2 class="section-title">기준 레시피 분해</h2>
+    <p class="section-body">오프레스트 기본 레시피를 구간별로 분해하면 이렇습니다.</p>
 
     <div class="table-wrap">
       <table>
         <thead>
-          <tr><th>항목</th><th>핫 브루잉</th><th>아이스 브루잉</th></tr>
+          <tr><th>구간</th><th class="text-center">물의 양</th><th class="text-center">누적</th><th class="text-center">추출되는 맛</th><th>역할</th></tr>
         </thead>
         <tbody>
-          <tr><td class="fw-500">원두</td><td>16g</td><td class="c-acc fw-500">22g</td></tr>
-          <tr><td class="fw-500">총 물</td><td>240g (3회)</td><td class="c-acc fw-500">200g (4회)</td></tr>
-          <tr><td class="fw-500">물 온도</td><td>93°C</td><td class="c-acc fw-500">92°C</td></tr>
-          <tr><td class="fw-500">푸어링</td><td>50g → 70g → 120g</td><td class="c-acc fw-500">50g × 4회 (30초 간격)</td></tr>
-          <tr><td class="fw-500">총 시간</td><td>~3분</td><td class="c-acc fw-500">~2분 10초</td></tr>
-          <tr><td class="fw-500">서빙</td><td>바로 서빙</td><td class="c-acc fw-500">스월링 후 얼음잔에 서빙</td></tr>
+          <tr>
+            <td class="fw-500">1차 (뜸)</td>
+            <td class="text-center">50g</td>
+            <td class="text-center">0 → 50g</td>
+            <td class="text-center c-dim">—</td>
+            <td class="c-dim">CO₂ 방출 + 물 침투 준비</td>
+          </tr>
+          <tr>
+            <td class="fw-500">2차</td>
+            <td class="text-center">70g</td>
+            <td class="text-center">50 → 120g</td>
+            <td class="text-center"><span class="c-red">산미</span> + <span class="c-acc">단맛</span></td>
+            <td class="fw-500">맛의 방향을 결정</td>
+          </tr>
+          <tr>
+            <td class="fw-500">3차</td>
+            <td class="text-center">120g</td>
+            <td class="text-center">120 → 240g</td>
+            <td class="text-center"><span class="c-acc">단맛</span> + <span class="c-purple">바디</span></td>
+            <td class="fw-500">농도와 무게감을 채움</td>
+          </tr>
         </tbody>
       </table>
     </div>
 
     <div class="accent-box">
-      <p><strong>핵심:</strong> 서버에 얼음을 넣지 않습니다. 추출 후 얼음잔에 부어 급냉시키는 방식입니다.</p>
+      <p><strong>2차 푸어</strong> = 맛의 방향 (신맛/단맛 밸런스)</p>
+      <p><strong>3차 푸어</strong> = 농도 (진하게 or 가볍게)</p>
     </div>
   </div>
-</section>
+</section><section>
+  <div class="container fade-in">
+    <div class="section-num">04</div>
+    <h2 class="section-title">커피 맛은 순서대로 나옵니다</h2>
+    <p class="section-body">커피에 물을 부으면 성분이 한꺼번에 나오지 않습니다.<br>작은 분자가 먼저, 큰 분자가 나중에 녹아 나옵니다.</p>
 
-<!-- ═══ 02. 기본 레시피 ═══ -->
-<section>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>순서</th><th>성분</th><th>맛</th><th>쉬운 비유</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="c-red text-center">초반</td>
+            <td>유기산 (작은 분자)</td>
+            <td class="c-red">산미 — 신맛</td>
+            <td class="c-dim">레몬즙의 첫 신맛</td>
+          </tr>
+          <tr>
+            <td class="c-acc text-center">중반</td>
+            <td>당류 / 캐러멜</td>
+            <td class="c-acc">단맛 — 스위트 스팟</td>
+            <td class="c-dim">쿠키 굽는 고소한 향</td>
+          </tr>
+          <tr>
+            <td class="c-purple text-center">후반</td>
+            <td>타닌 / 카페인 (큰 분자)</td>
+            <td class="c-purple">쓴맛 — 떫은맛</td>
+            <td class="c-dim">티백 너무 오래 우린 맛</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="accent-box">
+      <p><strong>기억법:</strong> 산(신맛) → 단(단맛) → 쓴(쓴맛)</p>
+      <p>추출이 길어질수록 쓴맛이 늘어납니다. 차 티백과 같은 원리입니다.</p>
+    </div>
+  </div>
+</section></div>
+<div id="iceContent" style="display:none;"><section>
+  <div class="container fade-in">
+    <div class="section-num">01</div>
+    <h2 class="section-title">바 요약표</h2>
+
+    <div class="recipe-card">
+      <div class="recipe-label">아이스 브루잉 레시피</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>구간</th><th>물의 양</th><th>눈적</th><th>타이밍</th></tr></thead>
+          <tbody>
+            <tr><td class="fw-500">1차 (뜸)</td><td>50g</td><td>50g</td><td>0:00</td></tr>
+            <tr><td class="fw-500">2차</td><td>50g</td><td>100g</td><td>0:30</td></tr>
+            <tr><td class="fw-500">3차</td><td>50g</td><td>150g</td><td>1:00</td></tr>
+            <tr><td class="fw-500">4차</td><td>50g</td><td>200g</td><td>1:30</td></tr>
+            <tr class="highlight-row"><td class="c-red">제거</td><td>—</td><td>—</td><td class="c-red">~2:10</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="accent-box">
+      <p><strong>원두:</strong> 22g &nbsp;|&nbsp; <strong>물:</strong> 200g (92°C) &nbsp;|&nbsp; <strong>간격:</strong> 30초 &nbsp;|&nbsp; <strong>서빙:</strong> 스월링 → 얼음잔</p>
+    </div>
+  </div>
+</section><section>
   <div class="container fade-in">
     <div class="section-num">02</div>
     <h2 class="section-title">기본 레시피 (4회 균등 푸어링)</h2>
@@ -767,149 +560,7 @@ body.ice-mode .card { border-color: var(--ice-border); }
       <p>2분 10초쯤 원두 베드가 드러나면 드리퍼를 제거합니다.</p>
     </div>
   </div>
-</section>
-
-<!-- ═══ 03. 왜 다르게 내리는가 ═══ -->
-<section>
-  <div class="container fade-in">
-    <div class="section-num">03</div>
-    <h2 class="section-title">왜 이렇게 내리는가</h2>
-
-    <div class="accent-box-copper">
-      <p><strong>원두 22g:</strong> 핫(16g)보다 많은 이유 — 얼음에 희석되므로 진하게 추출해야 밸런스가 맞습니다.</p>
-    </div>
-
-    <div class="accent-box-copper">
-      <p><strong>물 200g (92°C):</strong> 총량을 줄이고 온도를 1도 낮춰서 과추출 없이 농축된 맛을 만듭니다.</p>
-    </div>
-
-    <div class="accent-box-copper">
-      <p><strong>4회 균등 푸어링:</strong> 핫과 달리 매회 같은 양(50g)을 부어 균일한 추출을 만듭니다. 변수를 최소화합니다.</p>
-    </div>
-
-    <div class="accent-box">
-      <p><strong>스월링 서빙:</strong> 추출 완료 후 서버를 가볍게 스월링(돌려주기)하여 농도를 균일하게 만든 뒤, 얼음이 가득 찬 서빙잔에 부어줍니다.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 04. 체크리스트 ═══ -->
-<section>
-  <div class="container fade-in">
-    <div class="section-num">04</div>
-    <h2 class="section-title">바 체크리스트 (STEP 1–8)</h2>
-    <p class="section-body" style="font-size:13px; color:var(--dim); font-style:italic;">프린트해서 바 근처에 붙여두세요</p>
-
-    <div class="step-card">
-      <div class="step-num">STEP 1</div>
-      <div class="step-title">원두 22g 계량</div>
-      <div class="step-detail">핫(16g)보다 6g 더 — 아이스 전용 세팅</div>
-    </div>
-
-    <div class="step-card">
-      <div class="step-num">STEP 2</div>
-      <div class="step-title">중간 굵기 분쇄</div>
-      <div class="step-detail">핫과 동일한 분쇄도 유지</div>
-    </div>
-
-    <div class="step-card">
-      <div class="step-num">STEP 3</div>
-      <div class="step-title">물 92°C 준비</div>
-      <div class="step-detail">핫(93°C)보다 1도 낮게 — 과추출 방진</div>
-    </div>
-
-    <div class="step-card">
-      <div class="step-num">STEP 4</div>
-      <div class="step-title">드리퍼 + 필터 린싱</div>
-      <div class="step-detail">서버에 얼음 넣지 않음 — 빈 서버 위에 드리퍼 세팅</div>
-    </div>
-
-    <div class="step-card">
-      <div class="step-num">STEP 5</div>
-      <div class="step-title">1차 50g (뜸들이기)</div>
-      <div class="step-detail">타이머 시작. 원두 전체 적시기</div>
-    </div>
-
-    <div class="step-card">
-      <div class="step-num">STEP 6</div>
-      <div class="step-title">2차~4차 각 50g (30초 간격)</div>
-      <div class="step-detail">0:30 → 100g / 1:00 → 150g / 1:30 → 200g</div>
-    </div>
-
-    <div class="step-card">
-      <div class="step-num">STEP 7</div>
-      <div class="step-title">~2:10 드리퍼 제거</div>
-      <div class="step-detail">원두 표면이 드러나면 즉시 제거</div>
-    </div>
-
-    <div class="step-card">
-      <div class="step-num">STEP 8</div>
-      <div class="step-title">스월링 후 얼음잔에 서빙</div>
-      <div class="step-detail">서버를 가볍게 돌려 농도 균일화 → 얼음 가득 찬 잔에 부어 급냉</div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 05. 절대 금지 ═══ -->
-<section>
-  <div class="container fade-in">
-    <div class="section-num">05</div>
-    <h2 class="section-title">절대 하지 말 것</h2>
-    <div style="margin-top: 24px;">
-      <div class="warn-box">서버에 얼음을 넣고 추출하지 마세요. 추출 후 얼음잔에 부어야 맛이 깨끗합니다.</div>
-      <div class="warn-box">총 물의 양(200g)을 함부로 바꾸지 마세요. 비율이 깨집니다.</div>
-      <div class="warn-box">30초 간격을 무시하지 마세요. 타이밍이 맛의 핵심입니다.</div>
-      <div class="warn-box">추출 시간 2분 30초를 넘기지 마세요. 쓴맛이 급증합니다.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 06. 요약 테이블 ═══ -->
-<section>
-  <div class="container fade-in">
-    <div class="section-num">06</div>
-    <h2 class="section-title">바 요약표</h2>
-
-    <div class="recipe-card">
-      <div class="recipe-label">아이스 브루잉 레시피</div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>구간</th><th>물의 양</th><th>눈적</th><th>타이밍</th></tr></thead>
-          <tbody>
-            <tr><td class="fw-500">1차 (뜸)</td><td>50g</td><td>50g</td><td>0:00</td></tr>
-            <tr><td class="fw-500">2차</td><td>50g</td><td>100g</td><td>0:30</td></tr>
-            <tr><td class="fw-500">3차</td><td>50g</td><td>150g</td><td>1:00</td></tr>
-            <tr><td class="fw-500">4차</td><td>50g</td><td>200g</td><td>1:30</td></tr>
-            <tr class="highlight-row"><td class="c-red">제거</td><td>—</td><td>—</td><td class="c-red">~2:10</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="accent-box">
-      <p><strong>원두:</strong> 22g &nbsp;|&nbsp; <strong>물:</strong> 200g (92°C) &nbsp;|&nbsp; <strong>간격:</strong> 30초 &nbsp;|&nbsp; <strong>서빙:</strong> 스월링 → 얼음잔</p>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<!-- CLOSING -->
-<div class="closing">
-  <p class="closing-main">
-    진하게 내려서, 차갑게 서빙하세요<br>
-    깔끔한 아이스 커피의 비결입니다
-  </p>
-  <p class="closing-sub">
-    30초 간격으로 정확하게<br>
-    얼음잔에 부어 급냉하면 완성
-  </p>
-  <p class="closing-sign">Find your rest. Feel your rest.</p>
-</div>
-
-
-
-</div>
+</section></div>
 <div class="footer">OFFREST ROASTERY · 푸어링 브루잉 가이드 · 2026. 04</div>
 <script>
 function switchMode(m){var b=document.body,h=document.getElementById("hotContent"),i=document.getElementById("iceContent"),t=document.getElementById("navTitle");if(m==="ice"){b.classList.add("ice-mode");h.style.display="none";i.style.display="block";t.textContent="아이스 브루잉 가이드";}else{b.classList.remove("ice-mode");h.style.display="block";i.style.display="none";t.textContent="푸어링 맛 조절 가이드";}document.querySelectorAll(".tab-btn").forEach(function(btn){var a=btn.dataset.mode===m;btn.classList.toggle("active",a);btn.classList.toggle("hot-active",a&&m==="hot");btn.classList.toggle("ice-active",a&&m==="ice");});window.scrollTo({top:0,behavior:"instant"});setTimeout(function(){document.querySelectorAll(".fade-in").forEach(function(el){el.classList.remove("show");});observeFadeIns();},50);}
@@ -917,5 +568,5 @@ document.addEventListener("click",function(e){if(e.target.classList.contains("ta
 var nav=document.getElementById("topNav");window.addEventListener("scroll",function(){if(window.scrollY>300){nav.classList.add("visible");}else{nav.classList.remove("visible");}});
 function observeFadeIns(){var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("show");}});},{threshold:0.15});document.querySelectorAll(".fade-in:not(.show)").forEach(function(el){o.observe(el);});}observeFadeIns();
 </script>
-</body>
-</html>
+
+</body></html>
